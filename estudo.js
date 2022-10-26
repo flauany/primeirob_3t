@@ -65,16 +65,20 @@ function total(){
         document.getElementById("meses").focus();
         return
 
+
     }
+    let texto = "";
     let r = 0;
     for(let i=1; i <= t; i++){
         r = v * (1+(j/100));
-        document.write("mes " + i + " valor:" + moeda(r)  + "<br>");
+      texto += "mes " + i + " valor:" + moeda(r)  + "<br>");
+        //document.write("mes " + i + " valor:" + moeda(r)  + "<br>");
         v = r;
     }
-    
+    document.getElementById("meses").innerHTML=texto;
+    document.getElementById("totalgeral").innerHTML="total: "+moeda(r);
 
-    document.write("resultado: " + moeda (r));
+ 
 }
 
 function media(){

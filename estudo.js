@@ -36,49 +36,48 @@ function multiplica(){
 }
 function moeda(atual){
     return atual.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
-
 }
+
 function total(){
     let v = document.getElementById("valor").value;
     let j = document.getElementById("juros").value;
     let t = document.getElementById("meses").value;
 
     if(!Number(v)){
-        alert("o valor deve ser numérico.");
+        alert("O valor deve ser numerico.");
         document.getElementById("valor").value = "";
         document.getElementById("valor").focus();
-        return
 
+        return
     }
 
     if(!Number(j)){
-        alert("os juros deve ser numérico.");
+        alert("Os juros deve ser numerico.");
         document.getElementById("juros").value = "";
         document.getElementById("juros").focus();
-        return
 
+        return
     }
 
     if(!Number(t)){
-        alert("o valor dos meses deve ser numérico.");
+        alert("O valor dos meses deve ser numerico.");
         document.getElementById("meses").value = "";
         document.getElementById("meses").focus();
+
         return
-
-
     }
     let texto = "";
     let r = 0;
     for(let i=1; i <= t; i++){
         r = v * (1+(j/100));
-      texto += "mes " + i + " valor:" + moeda(r)  + "<br>");
-        //document.write("mes " + i + " valor:" + moeda(r)  + "<br>");
+
+       texto += "mes " + i + " valor:" + moeda(r) + "<br>"
+       
         v = r;
     }
-    document.getElementById("meses").innerHTML=texto;
+    document.getElementById("mes").innerHTML=texto;
     document.getElementById("totalgeral").innerHTML="total: "+moeda(r);
-
- 
+    
 }
 
 function media(){
@@ -116,3 +115,46 @@ function soma(){
 
 
 }
+
+
+function calcularaiz(){
+
+    let a = document.getElementById("a").value;
+    let b = document.getElementById("b").value;
+    let c = document.getElementById("c").value;
+    //ax2 + bx + c = 0
+
+    let delta = (b*b) - (4*a*c);
+
+    if (delta < 0){
+        document.getElementById("raiz").innerHTML = "Nao possui raiz real" ;
+    } else if (delta == 0){
+        let x1 = (-b)/(2*a);
+        document.getElementById("raiz").innerHTML = "x1 = x2 = " + x1;
+    } else {
+        let x1 = ((-b) + Math.sqrt(delta))/(2*a);
+        let x2 = ((-b) - Math.sqrt(delta))/(2*a);
+        document.getElementById("raiz").innerHTML = "x1 = " + x1 + " x2 = " + x2;
+
+    }
+
+}
+let a=5;
+let b=-1;
+let c=-6;
+ 
+function calcularaiz(){
+    let delta= (b*b) - (4*a*c);
+    if (delta <0){
+
+    }else{
+        let rais_quadrada = match.sqrt(delta);
+        x1 = ((-b)) + raiz_quadrada/(2*a);
+        x2 = ((-b)) + raiz_quadrada/(*2*a);
+    }
+
+    document.getElementById("raiz").innerHTML = delta;
+}
+
+
+
